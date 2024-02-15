@@ -40,12 +40,21 @@ class Stack:
         self.linked_list.head=self.linked_list.head.next
         return popped_node_value
     
+    def peek(self):
+        if self.isEmpty():
+            return "There are no elements in the stack"
+        return self.linked_list.head.value
+    
+    def deleteStack(self):
+        self.linked_list.head=None
+    
 customStack=Stack()
 customStack.push(10)
 customStack.push(11)
 customStack.push(12)
 print(customStack)
 print("---------------------------")
-print(customStack.pop())
+print(customStack.deleteStack())
 print("---------------------------")
 print(customStack)
+print(customStack.isEmpty())
