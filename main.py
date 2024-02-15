@@ -32,11 +32,20 @@ class Stack:
         new_node=Node(value)
         new_node.next=self.linked_list.head
         self.linked_list.head=new_node
+        
+    def pop(self):
+        if self.isEmpty():
+            return "There are no elements to pop"
+        popped_node_value=self.linked_list.head.value
+        self.linked_list.head=self.linked_list.head.next
+        return popped_node_value
     
 customStack=Stack()
-print(customStack.isEmpty())
-print(customStack)
 customStack.push(10)
 customStack.push(11)
 customStack.push(12)
+print(customStack)
+print("---------------------------")
+print(customStack.pop())
+print("---------------------------")
 print(customStack)
